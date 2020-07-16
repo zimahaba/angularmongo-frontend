@@ -1,0 +1,25 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-1">String</th>
+        <th class="col-1">Integer</th>
+        <th class="col-1">Long</th>
+        <th class="col-1">Decimal</th>
+        <th class="col-1">Data</th>
+        <th class="col-1">Time</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let entity of entityList">
+        <td>{{ entity.oneString }}</td>
+        <td>{{ entity.oneInteger }}</td>
+        <td>{{ entity.oneLong }}</td>
+        <td>{{ entity.oneDecimal }}</td>
+        <td>{{ entity.oneDate }}</td>
+        <td>{{ entity.oneTime }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

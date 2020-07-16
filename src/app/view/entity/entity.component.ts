@@ -33,7 +33,7 @@ export class EntityComponent implements OnInit {
   }
 
   goToRead() {
-    this.router.navigate(['/entity/read']);
+    this.router.navigate(['/entity/read/10']);
   }
 
   goToUpdate() {

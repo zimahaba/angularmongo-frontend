@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'entity', component: EntityComponent },
   { path: 'entity/create', component: EntityCreateComponent },
-  { path: 'entity/read', component: EntityReadComponent },
+  { path: 'entity/read/:id', component: EntityReadComponent },
   { path: 'entity/update', component: EntityCreateComponent },
   { path: 'entity/delete', component: EntityDeleteComponent },
 ];

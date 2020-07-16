@@ -1,4 +1,6 @@
 export class Entity {
+
+  id: string;
   oneString: string;
   oneInteger: Number;
   oneLong: Number;

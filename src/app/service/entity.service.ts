@@ -15,6 +15,10 @@ export class EntityService {
     return this.http.get<Entity[]>('http://localhost:8080/entity');
   }
 
+  find(id: string): Observable<Entity> {
+    return this.http.get<Entity>(`http://localhost:8080/entity/${id}`);
+  }
+
   saveEntity(entity: Entity): Observable<Entity> {
     return this.http.post<Entity>('http://localhost:8080/entity', entity);
   }

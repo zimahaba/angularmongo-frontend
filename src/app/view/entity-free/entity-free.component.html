@@ -1,3 +1,8 @@
+<button (click)="goToCreate()">Create</button>
+<button (click)="goToRead()">Read</button>
+<button (click)="goToUpdate()">Update</button>
+<button (click)="goToDelete()">Delete</button>
+
 <div>
   <table class="table">
     <thead>
@@ -13,7 +18,9 @@
 
     <tbody>
       <tr *ngFor="let entity of entityList">
-        <td>{{ entity.oneString }}</td>
+        <td>
+          <a style="cursor: pointer;">{{ entity.oneString }}</a>
+        </td>
         <td>{{ entity.oneInteger }}</td>
         <td>{{ entity.oneLong }}</td>
         <td>{{ entity.oneDecimal }}</td>

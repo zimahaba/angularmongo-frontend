@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { Entity } from '../model/entity';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class EntityFreeService {
+export class EntityService {
+
   constructor(private http: HttpClient) {}
 
   findEntities(): Observable<Entity[]> {
-    return this.http.get<Entity[]>('http://localhost:8080/free/entity');
+    return this.http.get<Entity[]>('http://localhost:8080/entity');
   }
 }

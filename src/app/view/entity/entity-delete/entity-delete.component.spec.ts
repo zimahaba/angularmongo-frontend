@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntityFreeComponent } from './entity-free.component';
+import { EntityDeleteComponent } from './entity-delete.component';
 
-describe('EntityFreeComponent', () => {
-  let component: EntityFreeComponent;
-  let fixture: ComponentFixture<EntityFreeComponent>;
+describe('EntityDeleteComponent', () => {
+  let component: EntityDeleteComponent;
+  let fixture: ComponentFixture<EntityDeleteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntityFreeComponent ]
+      declarations: [ EntityDeleteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntityFreeComponent);
+    fixture = TestBed.createComponent(EntityDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

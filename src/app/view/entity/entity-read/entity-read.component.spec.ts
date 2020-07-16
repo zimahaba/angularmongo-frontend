@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntityFreeReadComponent } from './entity-free-read.component';
+import { EntityReadComponent } from './entity-read.component';
 
-describe('EntityFreeReadComponent', () => {
-  let component: EntityFreeReadComponent;
-  let fixture: ComponentFixture<EntityFreeReadComponent>;
+describe('EntityReadComponent', () => {
+  let component: EntityReadComponent;
+  let fixture: ComponentFixture<EntityReadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntityFreeReadComponent ]
+      declarations: [ EntityReadComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntityFreeReadComponent);
+    fixture = TestBed.createComponent(EntityReadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

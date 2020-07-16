@@ -6,20 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './view/home/home.component';
 import { EntityComponent } from './view/entity/entity.component';
-import { EntityFreeComponent } from './view/entity-free/entity-free.component';
-import { EntityFreeCreateComponent } from './view/entity-free/entity-free-create/entity-free-create.component';
-import { EntityFreeReadComponent } from './view/entity-free/entity-free-read/entity-free-read.component';
-import { EntityFreeDeleteComponent } from './view/entity-free/entity-free-delete/entity-free-delete.component';
+import { EntityCreateComponent } from './view/entity/entity-create/entity-create.component';
+import { EntityReadComponent } from './view/entity/entity-read/entity-read.component';
+import { EntityDeleteComponent } from './view/entity/entity-delete/entity-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     EntityComponent,
-    EntityFreeComponent,
-    EntityFreeCreateComponent,
-    EntityFreeReadComponent,
-    EntityFreeDeleteComponent,
+    EntityCreateComponent,
+    EntityReadComponent,
+    EntityDeleteComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { Entity } from 'src/app/model/entity';
 
 @Component({
-  selector: 'app-entity-free-create',
-  templateUrl: './entity-free-create.component.html',
-  styleUrls: ['./entity-free-create.component.scss'],
+  selector: 'app-entity-create',
+  templateUrl: './entity-create.component.html',
+  styleUrls: ['./entity-create.component.scss']
 })
-export class EntityFreeCreateComponent implements OnInit {
+export class EntityCreateComponent implements OnInit {
+
   constructor(private router: Router) {}
 
   entity: Entity;
@@ -18,6 +19,7 @@ export class EntityFreeCreateComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/entityfree']);
+    this.router.navigate(['/entity']);
   }
+
 }

@@ -6,5 +6,7 @@ export class Entity {
   oneDate: Date;
   oneTime: Date;
 
-  constructor() {}
+  constructor(init?: Partial<Entity>) {
+    Object.assign(this, init);
+}
 }

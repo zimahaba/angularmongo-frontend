@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EntityService } from 'src/app/service/entity.service';
 import { Router } from '@angular/router';
+import { Entity } from 'src/app/model/entity';
 
 @Component({
   selector: 'app-entity',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EntityComponent implements OnInit {
 
-  entityList;
+  entityList: Entity[];
 
   constructor(
     private router: Router,
@@ -17,6 +18,10 @@ export class EntityComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.findEntities();
+  }
+
+  findEntities() {
     this.entityService.findEntities().subscribe((response) => {
       console.log(response);
       this.entityList = response;

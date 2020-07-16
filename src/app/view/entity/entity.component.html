@@ -24,8 +24,8 @@
         <td>{{ entity.oneInteger }}</td>
         <td>{{ entity.oneLong }}</td>
         <td>{{ entity.oneDecimal }}</td>
-        <td>{{ entity.oneDate }}</td>
-        <td>{{ entity.oneTime }}</td>
+        <td>{{ entity.oneDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ entity.oneTime | date: 'shortTime'}}</td>
       </tr>
     </tbody>
   </table>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Entity } from '../model/entity';
 
 @Injectable({
@@ -12,5 +13,9 @@ export class EntityService {
 
   findEntities(): Observable<Entity[]> {
     return this.http.get<Entity[]>('http://localhost:8080/entity');
+  }
+
+  saveEntity(entity: Entity): Observable<Entity> {
+    return this.http.post<Entity>('http://localhost:8080/entity', entity);
   }
 }

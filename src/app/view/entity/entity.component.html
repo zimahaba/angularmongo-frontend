@@ -9,6 +9,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th class="col-1"></th>
         <th class="col-1">String</th>
         <th class="col-1">Integer</th>
         <th class="col-1">Long</th>
@@ -20,6 +21,7 @@
 
     <tbody>
       <tr *ngFor="let entity of entityList">
+        <td><input type="radio" name="radiogroup" value="{{entity.id}}"></td>
         <td>
           <a style="cursor: pointer;" [routerLink]="['/entity/read', entity.id]">{{ entity.oneString }}</a>
         </td>

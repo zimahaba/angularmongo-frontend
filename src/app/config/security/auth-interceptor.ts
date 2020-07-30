@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
             if (err.status === 401 || err.status === 403) {
                 // auto logout if 401 response returned from api
                 this.authenticationService.logout();
-                alert("nao logado");
+                //alert("nao logado");
                 //location.reload(true);
             }
 

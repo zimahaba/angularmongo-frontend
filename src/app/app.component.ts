@@ -10,10 +10,6 @@ export class AppComponent {
 
   constructor(private authenticationService: AuthenticationService) {}
 
-  login() {
-    this.authenticationService.login('zimahaba', 'admin').subscribe();
-  }
-
   logout() {
     this.authenticationService.logout();
     location.reload();

@@ -26,12 +26,10 @@ export class AuthenticationService {
     let user = new User();
     user.username = username;
     user.password = password;
-    console.log('posting login to ', `${environment.apiUrl}/login`);
+    
     return this.http.post<any>('http://localhost:8080/login'/*`${environment.apiUrl}/login`*/, user, {observe: "response"})
     .pipe(map(response => {
-        console.log('token: ', response.headers.get('Authorization'));
         
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
         user.token = response.headers.get('Authorization');
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
@@ -40,7 +38,6 @@ export class AuthenticationService {
   }
 
   logout() {
-    console.log('logout');
     localStorage.removeItem('currentUser');
   }
 }

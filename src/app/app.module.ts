@@ -14,6 +14,7 @@ import { EntityReadComponent } from './view/entity/entity-read/entity-read.compo
 import { EntityDeleteComponent } from './view/entity/entity-delete/entity-delete.component';
 import { AuthInterceptor } from './config/security/auth-interceptor';
 import { JwtInterceptor } from './config/security/jwt-interceptor';
+import { LoginComponent } from './view/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { JwtInterceptor } from './config/security/jwt-interceptor';
     EntityCreateComponent,
     EntityReadComponent,
     EntityDeleteComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [

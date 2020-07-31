@@ -15,6 +15,10 @@ import { EntityDeleteComponent } from './view/entity/entity-delete/entity-delete
 import { AuthInterceptor } from './config/security/auth-interceptor';
 import { JwtInterceptor } from './config/security/jwt-interceptor';
 import { LoginComponent } from './view/login/login.component';
+import { SpinnerComponent } from './infra/spinner/spinner.component';
+import { SpinnerOverlayComponent } from './infra/spinner/spinner-overlay/spinner-overlay.component';
+import { SpinnerOverlayService } from './infra/spinner/spinner-overlay.service';
+import { OverlayModule, OVERLAY_PROVIDERS } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,22 @@ import { LoginComponent } from './view/login/login.component';
     EntityReadComponent,
     EntityDeleteComponent,
     LoginComponent,
+    SpinnerComponent,
+    SpinnerOverlayComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    OVERLAY_PROVIDERS,
   ],
   bootstrap: [AppComponent],
+  entryComponents: [SpinnerComponent],
 })
 export class AppModule {}

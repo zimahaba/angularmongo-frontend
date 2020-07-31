@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { EntityService } from 'src/app/service/entity.service';
 import { Router } from '@angular/router';
 import { Entity } from 'src/app/model/entity';
+import { SpinnerOverlayService } from 'src/app/infra/spinner/spinner-overlay.service';
 
 @Component({
   selector: 'app-entity',
   templateUrl: './entity.component.html',
-  styleUrls: ['./entity.component.scss']
+  styleUrls: ['./entity.component.scss'],
 })
 export class EntityComponent implements OnInit {
-
   entityList: Entity[];
 
   constructor(
     private router: Router,
-    private entityService: EntityService
+    private entityService: EntityService,
+    private spinnerService: SpinnerOverlayService
   ) {}
 
   ngOnInit(): void {
@@ -22,7 +23,9 @@ export class EntityComponent implements OnInit {
   }
 
   findEntities() {
+    this.spinnerService.show();
     this.entityService.findEntities().subscribe((response) => {
+      this.spinnerService.hide();
       console.log(response);
       this.entityList = response;
     });
@@ -43,5 +46,4 @@ export class EntityComponent implements OnInit {
   goToDelete() {
     this.router.navigate(['/entity/delete']);
   }
-
 }

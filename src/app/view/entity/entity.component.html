@@ -6,22 +6,22 @@
 </div>
 
 <div>
-  <table class="table">
-    <thead>
+  <table class="table table-striped table-hover">
+    <thead class="thead-dark">
       <tr>
-        <th class="col-1"></th>
-        <th class="col-1">String</th>
-        <th class="col-1">Integer</th>
-        <th class="col-1">Long</th>
-        <th class="col-1">Decimal</th>
-        <th class="col-1">Data</th>
-        <th class="col-1">Time</th>
+        <th scope="col"></th>
+        <th scope="col">String</th>
+        <th scope="col">Integer</th>
+        <th scope="col">Long</th>
+        <th scope="col">Decimal</th>
+        <th scope="col">Data</th>
+        <th scope="col">Time</th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let entity of entityList">
-        <td><input type="radio" name="radiogroup" value="{{entity.id}}"></td>
+        <td scope="row"><input type="radio" name="radiogroup" value="{{entity.id}}" [(ngModel)]="selected"></td>
         <td>
           <a style="cursor: pointer;" [routerLink]="['/entity/read', entity.id]">{{ entity.oneString }}</a>
         </td>

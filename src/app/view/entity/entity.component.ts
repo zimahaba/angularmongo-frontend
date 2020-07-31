@@ -11,6 +11,7 @@ import { SpinnerOverlayService } from 'src/app/infra/spinner/spinner-overlay.ser
 })
 export class EntityComponent implements OnInit {
   entityList: Entity[];
+  selected: string;
 
   constructor(
     private router: Router,
@@ -36,14 +37,26 @@ export class EntityComponent implements OnInit {
   }
 
   goToRead() {
-    this.router.navigate(['/entity/read/10']);
+    if (this.selected == null || this.selected == undefined) {
+      alert('choose');
+      return;
+    }
+    this.router.navigate(['/entity/read/' + this.selected]);
   }
 
   goToUpdate() {
-    this.router.navigate(['/entity/update']);
+    if (this.selected == null || this.selected == undefined) {
+      alert('choose');
+      return;
+    }
+    this.router.navigate(['/entity/update/' + this.selected]);
   }
 
   goToDelete() {
-    this.router.navigate(['/entity/delete']);
+    if (this.selected == null || this.selected == undefined) {
+      alert('choose');
+      return;
+    }
+    this.router.navigate(['/entity/delete/' + this.selected]);
   }
 }

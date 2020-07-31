@@ -8,21 +8,36 @@ import { EntityDeleteComponent } from './view/entity/entity-delete/entity-delete
 import { AuthGuard } from './config/security/auth-guard';
 import { LoginComponent } from './view/login/login.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'entity', component: EntityComponent, canActivate: [AuthGuard] },
-  { path: 'entity/create', component: EntityCreateComponent, canActivate: [AuthGuard] },
-  { path: 'entity/read/:id', component: EntityReadComponent, canActivate: [AuthGuard] },
-  { path: 'entity/update', component: EntityCreateComponent, canActivate: [AuthGuard] },
-  { path: 'entity/delete', component: EntityDeleteComponent, canActivate: [AuthGuard] },
+  {
+    path: 'entity/create',
+    component: EntityCreateComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'entity/read/:id',
+    component: EntityReadComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'entity/update/:id',
+    component: EntityCreateComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'entity/delete/:id',
+    component: EntityDeleteComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard],
 })
 export class AppRoutingModule {}

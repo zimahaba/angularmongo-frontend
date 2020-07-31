@@ -1,1 +1,17 @@
-<p>entity-delete works!</p>
+
+<div class="row">
+    <div class="col">
+        <label>Delete the following entity? </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label>{{entity.oneString}}</label>
+    </div>
+</div>
+
+<div class="form-inline">
+    <button type="button" class="btn btn-secondary" (click)="goBack()">No</button>
+    <button type="button" class="btn btn-primary ml-1" (click)="delete()">Yes</button>
+</div>

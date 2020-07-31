@@ -5,10 +5,9 @@ import { catchError } from 'rxjs/operators';
 import { Entity } from '../model/entity';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EntityService {
-
   constructor(private http: HttpClient) {}
 
   findEntities(): Observable<Entity[]> {
@@ -21,5 +20,15 @@ export class EntityService {
 
   saveEntity(entity: Entity): Observable<Entity> {
     return this.http.post<Entity>('http://localhost:8080/entity', entity);
+  }
+
+  updateEntity(entity: Entity): Observable<Entity> {
+    return this.http.put<Entity>('http://localhost:8080/entity', entity);
+  }
+
+  deleteEntity(entity: Entity): Observable<Entity> {
+    return this.http.delete<Entity>(
+      `http://localhost:8080/entity/${entity.id}`
+    );
   }
 }

@@ -1,7 +1,58 @@
 
-<label>{{entity.oneString}}</label>
-<label></label>
-<label></label>
-<label></label>
-<label></label>
-<label></label>
+    <div class="row">
+        <div class="col-1">
+            <label>String: </label>
+        </div>
+        <div>
+            <label>{{entity.oneString}}</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label>Integer: </label>
+        </div>
+        <div>
+            <label>{{entity.oneInteger}}</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label>Long: </label>
+        </div>
+        <div>
+            <label>{{entity.oneLong}}</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label>Decimal: </label>
+        </div>
+        <div>
+            <label>{{entity.oneDecimal}}</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label>Date: </label>
+        </div>
+        <div>
+            <label>{{entity.oneDate | date:"dd/MM/yyyy"}}</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label>Date: </label>
+        </div>
+        <div>
+            <label>{{entity.oneTime}}</label>
+        </div>
+    </div>
+
+    <div class="form-inline">
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+    </div>

@@ -24,10 +24,7 @@ export class EntityComponent implements OnInit {
   }
 
   findEntities() {
-    this.spinnerService.show();
     this.entityService.findEntities().subscribe((response) => {
-      this.spinnerService.hide();
-      console.log(response);
       this.entityList = response;
     });
   }

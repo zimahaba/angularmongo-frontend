@@ -18,6 +18,8 @@ export class EntityDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.entity = new Entity();
+
     let id = '';
     this.route.params.subscribe((params) => {
       id = params['id'];

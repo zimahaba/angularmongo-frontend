@@ -11,6 +11,12 @@ export class SpinnerOverlayService {
 
   constructor(private overlay: Overlay) {}
 
+  on: boolean = false;
+
+  public isOn() {
+    return this.on;
+  }
+
   public show(message = '') {
     // Returns an OverlayRef (which is a PortalHost)
 
@@ -21,11 +27,15 @@ export class SpinnerOverlayService {
     // Create ComponentPortal that can be attached to a PortalHost
     const spinnerOverlayPortal = new ComponentPortal(SpinnerOverlayComponent);
     const component = this.overlayRef.attach(spinnerOverlayPortal); // Attach ComponentPortal to PortalHost
+
+    this.on = true;
   }
 
   public hide() {
     if (!!this.overlayRef) {
       this.overlayRef.detach();
+      this.on = false;
     }
+    this.on = false;
   }
 }

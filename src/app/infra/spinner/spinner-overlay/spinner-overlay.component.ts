@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SpinnerOverlayService } from '../spinner-overlay.service';
 
 @Component({
   selector: 'app-spinner-overlay',
@@ -7,7 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SpinnerOverlayComponent implements OnInit {
   @Input() public message: string;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  isOn() {
+    return true;
+  }
 }

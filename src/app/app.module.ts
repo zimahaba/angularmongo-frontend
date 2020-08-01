@@ -19,6 +19,7 @@ import { SpinnerComponent } from './infra/spinner/spinner.component';
 import { SpinnerOverlayComponent } from './infra/spinner/spinner-overlay/spinner-overlay.component';
 import { SpinnerOverlayService } from './infra/spinner/spinner-overlay.service';
 import { OverlayModule, OVERLAY_PROVIDERS } from '@angular/cdk/overlay';
+import { SpinnerInterceptor } from './config/spinner-interceptor';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { OverlayModule, OVERLAY_PROVIDERS } from '@angular/cdk/overlay';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
     OVERLAY_PROVIDERS,
   ],
   bootstrap: [AppComponent],
